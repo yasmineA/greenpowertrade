@@ -1,0 +1,3 @@
+INSERT INTO market (id, type) VALUES (1, 'RESERVE_PRIMAIRE');
+INSERT INTO market (id, type) VALUES (2, 'RESERVE_SECONDAIRE');
+INSERT INTO market (id, type) VALUES (3, 'RESERVE_RAPIDE');
