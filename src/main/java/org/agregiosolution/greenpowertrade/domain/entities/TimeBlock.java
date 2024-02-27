@@ -1,4 +1,4 @@
-package org.agregiosolution.greenpowertrade.domaine.entities;
+package org.agregiosolution.greenpowertrade.domain.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,6 +13,6 @@ public class TimeBlock {
     private Long id;
     private double quantityMW;
     private double floorPrice;
-    private Set<ProducerContribution> producersContribution;
+    private Set<ProducerContribution> contributions;
 
 }

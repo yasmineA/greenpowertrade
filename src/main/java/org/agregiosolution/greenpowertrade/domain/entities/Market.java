@@ -1,14 +1,12 @@
-package org.agregiosolution.greenpowertrade.domaine.entities;
+package org.agregiosolution.greenpowertrade.domain.entities;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 public class Market {
     private Long id;
     private MarketType type;

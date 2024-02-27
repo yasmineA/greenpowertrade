@@ -1,10 +1,11 @@
 package org.agregiosolution.greenpowertrade.application;
 
 
-import org.agregiosolution.greenpowertrade.domaine.InconsistentContributionException;
-import org.agregiosolution.greenpowertrade.domaine.OfferRepository;
-import org.agregiosolution.greenpowertrade.domaine.OfferService;
-import org.agregiosolution.greenpowertrade.domaine.entities.*;
+import org.agregiosolution.greenpowertrade.application.services.OfferServiceImpl;
+import org.agregiosolution.greenpowertrade.domain.entities.*;
+import org.agregiosolution.greenpowertrade.domain.exceptions.InconsistentContributionException;
+import org.agregiosolution.greenpowertrade.domain.repositories.OfferRepository;
+import org.agregiosolution.greenpowertrade.domain.services.OfferService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;

@@ -1,4 +1,4 @@
-package org.agregiosolution.greenpowertrade.domaine;
+package org.agregiosolution.greenpowertrade.domain.exceptions;
 
 public class BusinessException extends RuntimeException {
 

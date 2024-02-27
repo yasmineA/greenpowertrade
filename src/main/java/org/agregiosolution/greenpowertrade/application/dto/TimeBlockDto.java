@@ -16,5 +16,5 @@ public class TimeBlockDto {
     private Long id;
     private double quantityMW;
     private double floorPrice;
-    private Set<ProducerContributionDto> producersContribution;
+    private Set<ProducerContributionDto> contributions;
 }

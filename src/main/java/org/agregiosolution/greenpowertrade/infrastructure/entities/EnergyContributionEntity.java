@@ -1,22 +1,25 @@
 package org.agregiosolution.greenpowertrade.infrastructure.entities;
 
 import jakarta.persistence.*;
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "EnergyContribution")
-@Builder
 public class EnergyContributionEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "energy_producer_id")
-    private EnergyProducerEntity energyProducer;
+    private EnergyProducerEntity producer;
 
-    @ManyToOne(cascade = CascadeType.PERSIST)
+    @ManyToOne
     @JoinColumn(name = "time_block_id")
     private TimeBlockEntity timeBlock;
 

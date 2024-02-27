@@ -1,22 +1,24 @@
 package org.agregiosolution.greenpowertrade.infrastructure.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import lombok.Builder;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.agregiosolution.greenpowertrade.domain.entities.Market.MarketType;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity(name = "Market")
-@Builder
 public class MarketEntity {
+
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Integer id;
 
     @Column(nullable = false, unique = true)
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private MarketType type;
 }
