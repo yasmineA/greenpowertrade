@@ -34,17 +34,16 @@ public class OfferServiceImpl implements OfferService {
     @Override
     public Map<Market, List<Offer>> getOffers() {
         Set<Offer> offers = offerRepository.getOffers();
-        //todo replace with custom jpa query
         return offers.stream()
-                .collect(Collectors.groupingBy(Offer::getMarket));
+                .collect(Collectors.groupingBy(Offer::market));
     }
 
     private boolean isValidContribution(Offer offer) {
-        return offer.getTimeBlocks()
+        return offer.timeBlocks()
                 .stream()
-                .allMatch(timeBlock -> timeBlock.getContributions()
+                .allMatch(timeBlock -> timeBlock.contributions()
                         .stream()
-                        .mapToDouble(ProducerContribution::getMwContributed).sum() == timeBlock.getQuantityMW());
+                        .mapToDouble(ProducerContribution::mwContributed).sum() == timeBlock.quantityMW());
 
     }
 }

@@ -3,6 +3,7 @@ package org.agregiosolution.greenpowertrade.application.api;
 import lombok.AllArgsConstructor;
 import org.agregiosolution.greenpowertrade.application.dto.EnergyProducerDto;
 import org.agregiosolution.greenpowertrade.application.mappers.ProducerDtoMapper;
+import org.agregiosolution.greenpowertrade.domain.entities.Market;
 import org.agregiosolution.greenpowertrade.domain.repositories.ProducerRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,8 +26,7 @@ public class EnergyProducerController {
     }
 
     @GetMapping("/market/{market}")
-    public ResponseEntity<List<EnergyProducerDto>> getProducersByMarket(@PathVariable long marketId) {
-        //todo
-        return ResponseEntity.status(HttpStatus.OK).body(List.of());
+    public ResponseEntity<List<EnergyProducerDto>> getProducersByMarket(@PathVariable Market.MarketType market) {
+        return ResponseEntity.status(HttpStatus.OK).body(producerDtoMapper.mapToProducersDto(producerRepository.getProducersByMarket(market)));
     }
 }
